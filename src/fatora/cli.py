@@ -1,5 +1,6 @@
-import typer
 from decimal import Decimal
+
+import typer
 from fatora import __version__
 from fatora.validation import validate_totals
 
