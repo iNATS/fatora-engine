@@ -1,0 +1,8 @@
+services:
+  fatora:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      FATORA_ENV: development
+    restart: unless-stopped
