@@ -151,7 +151,7 @@ def extract_invoice_fields(ocr: OCRResult, source_sha256: str) -> InvoiceExtract
                 if date_match:
                     found[field_name] = _field_from_block(block, date_match.group(1), kind="text")
             elif field_name == "invoice_number":
-                value_match = re.search(r"[A-Za-z0-9٠-٩۰-۹][A-Za-z0-9٠-٩۰-۹/_-]{1,}", remainder)
+                value_match = re.search(r"[A-Za-z0-9٠-٩۰-۹\\u0600-\\u06FF][A-Za-z0-9٠-٩۰-۹\\u0600-\\u06FF/_-]{1,}", remainder)
                 if value_match:
                     found[field_name] = _field_from_block(block, value_match.group(0), kind="text")
             else:
