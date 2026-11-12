@@ -53,8 +53,7 @@ class TesseractAdapter:
                     "tsv",
                 ],
                 input=document.content,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
+                capture_output=True,
                 check=False,
                 timeout=self.timeout_seconds,
             )
@@ -75,7 +74,7 @@ class TesseractAdapter:
         try:
             rows = csv.DictReader(
                 io.StringIO(completed.stdout.decode("utf-8-sig")),
-                delimiter="\t",
+                delimiter="\\t",
             )
             grouped: OrderedDict[tuple[int, int, int, int], list[tuple[int, str, float]]] = (
                 OrderedDict()
