@@ -2,7 +2,6 @@ import pytest
 
 from fatora.documents import DocumentValidationError, validate_document
 
-
 PDF = b"%PDF-1.7\nexample"
 PNG = b"\x89PNG\r\n\x1a\n" + b"0" * 16
 JPEG = b"\xff\xd8\xff" + b"0" * 16
