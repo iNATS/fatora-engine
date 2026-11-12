@@ -141,7 +141,7 @@ def extract_invoice_fields(ocr: OCRResult, source_sha256: str) -> InvoiceExtract
             match = re.search(
                 rf"(?:{label_pattern})\s*[:：#-]?\s*(.*)$",
                 text,
-                flags=re.IGNORECASEGNORECASE,
+                flags=re.IGNORECASE,
             )
             if not match:
                 continue
