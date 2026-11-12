@@ -1,4 +1,5 @@
 from decimal import Decimal
+
 from fatora.validation import validate_totals
 
 
