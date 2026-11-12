@@ -1,8 +1,8 @@
 """Provider-neutral OCR/layout adapter contract."""
 from __future__ import annotations
 
-from dataclasses import dataclass, field
 from collections.abc import Sequence
+from dataclasses import dataclass, field
 from typing import Any, Protocol
 
 from fatora.documents import DocumentInput
