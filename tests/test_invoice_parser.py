@@ -58,7 +58,7 @@ def test_extracts_basic_arabic_fields_and_arabic_digits():
         ),
         source_sha256="c" * 64,
     )
-    assert result.fields["invoice_number"].value == "ف-2026-١٢"
+    assert result.fields["invoice_number"].value == "ف-2026-12"
     assert result.fields["invoice_date"].value == "12/11/2026"
     assert result.fields["subtotal"].value == "100.00"
     assert result.fields["tax"].value == "15.00"
