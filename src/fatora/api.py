@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException, Request
+
 from fatora import __version__
 from fatora.documents import DEFAULT_MAX_BYTES, DocumentValidationError, validate_document
 
