@@ -59,13 +59,13 @@ _LABELS = {
 
 _DATE_RE = re.compile(r"(?<!\d)(\d{1,4}[/-]\d{1,2}[/-]\d{1,4})(?!\d)")
 _CURRENCY_PATTERNS = (
-    (re.compile(r"\bSAR\b|ر\.س|ريال\s*سعودي", re.I), "SAR"),
-    (re.compile(r"\bAED\b|درهم\s*إماراتي", re.I), "AED"),
-    (re.compile(r"\bUSD\b|\$", re.I), "USD"),
-    (re.compile(r"\bEUR\b|€", re.I), "EUR"),
-    (re.compile(r"\bGBP\b|£", re.I), "GBP"),
-    (re.compile(r"\bEGP\b|جنيه\s*مصري", re.I), "EGP"),
-    (re.compile(r"\bDZD\b|دج", re.I), "DZD"),
+    (re.compile(r"\bSAR\b|ر\.س|ريال\s*سعودي", re.IGNORECASE), "SAR"),
+    (re.compile(r"\bAED\b|درهم\s*إماراتي", re.IGNORECASE), "AED"),
+    (re.compile(r"\bUSD\b|\$", re.IGNORECASE), "USD"),
+    (re.compile(r"\bEUR\b|€", re.IGNORECASE), "EUR"),
+    (re.compile(r"\bGBP\b|£", re.IGNORECASE), "GBP"),
+    (re.compile(r"\bEGP\b|جنيه\s*مصري", re.IGNORECASE), "EGP"),
+    (re.compile(r"\bDZD\b|دج", re.IGNORECASE), "DZD"),
 )
 
 
@@ -141,7 +141,7 @@ def extract_invoice_fields(ocr: OCRResult, source_sha256: str) -> InvoiceExtract
             match = re.search(
                 rf"(?:{label_pattern})\s*[:：#-]?\s*(.*)$",
                 text,
-                flags=re.IGNORECASE,
+                flags=re.IGNORECASEGNORECASE,
             )
             if not match:
                 continue
